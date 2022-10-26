@@ -10,5 +10,5 @@ inputs = {
 }
 
 terraform {
-  source = "../../../../..//modules/realm"
+  source = "../../../../../..//modules/realm"
 }

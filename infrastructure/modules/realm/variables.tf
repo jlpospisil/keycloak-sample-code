@@ -13,7 +13,7 @@ variable "display_name_html" {
 variable "enabled" {
   type        = bool
   default     = true
-  description = "Whether the realm is enabled"
+  description = "When false, users and clients will not be able to access this realm"
 }
 
 variable "theme" {
