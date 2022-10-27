@@ -22,6 +22,9 @@ inputs = {
     "http://localhost:8083/",
     "http://localhost:8083/login/callback"
   ]
+  optional_scopes = [
+    dependency.demo_realm.outputs.openid_group_scope_name,
+  ]
 }
 
 terraform {

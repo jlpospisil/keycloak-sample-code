@@ -21,7 +21,7 @@ class AuthService {
       metadataUrl: `${domain}/realms/demo-realm/.well-known/openid-configuration`,
       redirect_uri: `${origin}/login/callback`,
       response_type: 'id_token token',
-      scope: 'openid profile',
+      scope: 'openid profile groups',
       client_id: process.env.VUE_APP_AUTH_CLIENT_ID,
       accessTokenExpiringNotificationTime: 10,
       automaticSilentRenew: true,
@@ -38,9 +38,8 @@ class AuthService {
     return this.user?.profile;
   }
 
-  private get userRoles(): string[] {
-    console.log('******* ', this.user?.scope);
-    return this.user?.scope?.split(' ') ?? [];
+  private get userGroups(): string[] {
+    return this.user?.profile?.groups ?? [];
   }
 
   get authHeaderValue() {
@@ -74,11 +73,11 @@ class AuthService {
   }
 
   public hasAuthority(role: string): boolean {
-    return this.userRoles.includes(role);
+    return this.userGroups.includes(role);
   }
 
   public hasAnyAuthority(roles: string[]): boolean {
-    return this.userRoles.some((role) => roles.includes(role));
+    return this.userGroups.some((role) => roles.includes(role));
   }
 
   private async getUser(): Promise<Oidc.User | null> {

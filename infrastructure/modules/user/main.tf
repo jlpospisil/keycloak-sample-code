@@ -14,3 +14,9 @@ resource "keycloak_user" "user" {
     }
   }
 }
+
+resource "keycloak_user_groups" "user_groups" {
+  realm_id  = var.realm_id
+  user_id   = keycloak_user.user.id
+  group_ids = var.group_ids
+}

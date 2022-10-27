@@ -16,6 +16,12 @@ variable "first_name" {
   description = "The user's first name"
 }
 
+variable "group_ids" {
+  type        = list(string)
+  default     = []
+  description = "A list of Ids for the groups to add the user to"
+}
+
 variable "initial_password" {
   type        = string
   default     = null

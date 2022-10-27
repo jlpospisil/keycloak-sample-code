@@ -1,4 +1,4 @@
 output "client" {
-  value = keycloak_openid_client.openid_client
+  value = keycloak_openid_client.client
   sensitive = true
 }

@@ -42,6 +42,12 @@ variable "name" {
   description = "The display name of this client in the GUI"
 }
 
+variable "optional_scopes" {
+  type        = list(string)
+  default     = []
+  description = "A list of optional client scopes to add"
+}
+
 variable "realm_id" {
   type        = string
   description = "The realm this client is attached to"
