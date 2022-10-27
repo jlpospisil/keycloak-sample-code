@@ -9,5 +9,7 @@ resource "keycloak_openid_client" "openid_client" {
   standard_flow_enabled = var.standard_flow_enabled
   implicit_flow_enabled = var.implicit_flow_enabled
   web_origins           = var.web_origins
-  extra_config          = var.extra_config
+  extra_config          = merge(var.extra_config, {
+    "post.logout.redirect.uris" = var.logout_redirect_uris
+  })
 }

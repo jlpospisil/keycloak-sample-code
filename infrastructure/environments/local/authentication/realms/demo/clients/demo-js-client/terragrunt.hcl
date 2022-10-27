@@ -22,9 +22,6 @@ inputs = {
     "http://localhost:8083/",
     "http://localhost:8083/login/callback"
   ]
-  extra_config = {
-    "post.logout.redirect.uris" : "http://localhost:8083",
-  }
 }
 
 terraform {
