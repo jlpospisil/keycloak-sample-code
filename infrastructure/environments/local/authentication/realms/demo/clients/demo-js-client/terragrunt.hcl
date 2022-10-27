@@ -13,10 +13,10 @@ dependency "demo_realm" {
 
 inputs = {
   realm_id              = dependency.demo_realm.outputs.realm.id
-  client_id             = "demo-client"
-  name                  = "Demo Client"
+  client_id             = "demo-js-client"
+  name                  = "Demo JS Client"
   access_type           = "PUBLIC"
-  standard_flow_enabled = true
+  implicit_flow_enabled = true
   valid_redirect_uris   = [
     "http://localhost:8083",
     "http://localhost:8083/",
