@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import authRouterGuard from '@/router/AuthRouterGuard';
 import Routes from '@/router/routes';
-import { Roles } from '@/constants/authentication';
+import { Groups } from '@/constants/authentication';
 import HomeView from '../views/HomeView.vue';
 
 const routes: Array<RouteRecordRaw> = [
@@ -27,7 +27,7 @@ const routes: Array<RouteRecordRaw> = [
     name: 'read-access',
     component: () => import(/* webpackChunkName: "read-access" */ '../views/ReadAccess.vue'),
     meta: {
-      hasAuthority: Roles.DEMO_READ,
+      hasAuthority: Groups.DEMO_READ,
     },
   },
   {
@@ -35,7 +35,7 @@ const routes: Array<RouteRecordRaw> = [
     name: 'write-access',
     component: () => import(/* webpackChunkName: "write-access" */ '../views/WriteAccess.vue'),
     meta: {
-      hasAuthority: Roles.DEMO_WRITE,
+      hasAuthority: Groups.DEMO_WRITE,
     },
   },
 ];

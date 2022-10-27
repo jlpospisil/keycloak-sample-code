@@ -30,7 +30,7 @@ import { defineComponent, inject } from 'vue';
 import Routes from '@/router/routes';
 import AuthService from '@/services/AuthService';
 import { ServiceProviderKeys } from '@/services';
-import { Roles } from '@/constants/authentication';
+import { Groups } from '@/constants/authentication';
 
 export default defineComponent({
   name: 'App',
@@ -48,11 +48,11 @@ export default defineComponent({
     routes: () => Routes,
 
     hasReadAccess() {
-      return this.authService?.hasAuthority(Roles.DEMO_READ) ?? false;
+      return this.authService?.hasAuthority(Groups.DEMO_READ) ?? false;
     },
 
     hasWriteAccess() {
-      return this.authService?.hasAuthority(Roles.DEMO_WRITE) ?? false;
+      return this.authService?.hasAuthority(Groups.DEMO_WRITE) ?? false;
     },
   },
 });

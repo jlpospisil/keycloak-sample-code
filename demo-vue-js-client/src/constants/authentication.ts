@@ -1,6 +1,6 @@
-export enum Roles {
+/* eslint-disable import/prefer-default-export */
+
+export enum Groups {
   DEMO_READ = 'demo.read',
   DEMO_WRITE = 'demo.write',
 }
-
-export const AuthenticationScopes: string = Object.values(Roles).join(' ');
