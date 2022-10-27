@@ -20,8 +20,11 @@ inputs = {
   valid_redirect_uris   = [
     "http://localhost:8083",
     "http://localhost:8083/",
-    "http://localhost:8083/login/oauth2/code/uaa",
+    "http://localhost:8083/login/callback"
   ]
+  extra_config = {
+    "post.logout.redirect.uris" : "http://localhost:8083",
+  }
 }
 
 terraform {

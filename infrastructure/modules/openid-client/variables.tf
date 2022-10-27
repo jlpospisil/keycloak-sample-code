@@ -18,6 +18,12 @@ variable "enabled" {
   description = "When false, this client will not be able to initiate a login or obtain access tokens"
 }
 
+variable "extra_config" {
+  type        = map(string)
+  default     = null
+  description = "A map of key/value pairs to add extra configuration attributes to this client. This can be used for custom attributes, or to add configuration attributes that are not yet supported by this Terraform provider. Use this attribute at your own risk, as it may conflict with top-level configuration attributes in future provider updates"
+}
+
 variable "implicit_flow_enabled" {
   type        = bool
   default     = false
@@ -50,4 +56,10 @@ variable "theme" {
 variable "valid_redirect_uris" {
   type        = list(string)
   description = "A list of valid URIs a browser is permitted to redirect to after a successful login or logout. Simple wildcards in the form of an asterisk can be used here"
+}
+
+variable "web_origins" {
+  type        = list(string)
+  default     = ["+"]
+  description = "A list of allowed CORS origins. To permit all valid redirect URIs, add +. Note that this will not include the * wildcard. To permit all origins, explicitly add *."
 }

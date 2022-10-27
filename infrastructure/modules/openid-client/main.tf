@@ -8,4 +8,6 @@ resource "keycloak_openid_client" "openid_client" {
   login_theme           = var.theme
   standard_flow_enabled = var.standard_flow_enabled
   implicit_flow_enabled = var.implicit_flow_enabled
+  web_origins           = var.web_origins
+  extra_config          = var.extra_config
 }
