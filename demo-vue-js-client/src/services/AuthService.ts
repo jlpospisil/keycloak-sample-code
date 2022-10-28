@@ -39,7 +39,6 @@ class AuthService {
   }
 
   private get userRoles(): string[] {
-    console.log('********', this.user?.profile?.realm_access?.[0]?.roles);
     return this.user?.profile?.realm_access?.[0]?.roles ?? [];
   }
 
