@@ -5,7 +5,7 @@ include {
 dependency "demo_realm" {
   config_path = "../../realm"
   mock_outputs = {
-    zone = {
+    realm = {
       id = "mock-realm-id"
     }
   }
@@ -14,7 +14,7 @@ dependency "demo_realm" {
 dependency "demo_read_role" {
   config_path = "../../roles/demo.read"
   mock_outputs = {
-    group = {
+    role = {
       id = "mock-group-id"
     }
   }
