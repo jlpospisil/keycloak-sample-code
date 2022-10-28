@@ -1,6 +1,5 @@
 package com.example.demoapi.security;
 
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.lang.annotation.Documented;
