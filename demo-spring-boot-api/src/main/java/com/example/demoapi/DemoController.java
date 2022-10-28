@@ -1,5 +1,6 @@
 package com.example.demoapi;
 
+import com.example.demoapi.security.AllowCrossOrigin;
 import com.example.demoapi.security.authorities.HasAuthorityResource1Read;
 import com.example.demoapi.security.authorities.HasAuthorityResource1Write;
 import org.springframework.security.core.Authentication;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
+@AllowCrossOrigin
 public class DemoController {
 
     @GetMapping("/demo-read")

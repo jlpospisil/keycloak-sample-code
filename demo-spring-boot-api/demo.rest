@@ -1,3 +1,9 @@
+### Pre-flight check
+
+OPTIONS {{baseUrl}}/demo-read
+Origin: http://localhost:8082
+Access-Control-Request-Method: GET
+
 ### Demo Read
 
 GET {{baseUrl}}/demo-read
