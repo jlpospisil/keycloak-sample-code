@@ -7,8 +7,18 @@ class DemoApiService {
     this.getAuthToken = getAuthToken;
   }
 
-  public async getDemoContent() {
-    const response = await fetch(`${this.baseUrl}/demo-read`, {
+  public async getDemoReadContent() {
+    const response = await fetch(`${this.baseUrl}/demo-read`, this.getRequestConfig());
+    return response.json();
+  }
+
+  public async getDemoWriteContent() {
+    const response = await fetch(`${this.baseUrl}/demo-write`, this.getRequestConfig());
+    return response.json();
+  }
+
+  private getRequestConfig(): RequestInit {
+    return {
       mode: 'cors',
       cache: 'no-cache',
       credentials: 'include',
@@ -17,8 +27,7 @@ class DemoApiService {
         'Content-Type': 'application/json',
         Authorization: this.getAuthToken(),
       },
-    });
-    return response.json();
+    };
   }
 }
 

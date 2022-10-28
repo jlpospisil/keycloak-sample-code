@@ -24,7 +24,7 @@ export default defineComponent({
   }),
 
   async mounted() {
-    this.demoContent = await this.demoApiService?.getDemoContent();
+    this.demoContent = await this.demoApiService?.getDemoReadContent();
   },
 });
 </script>

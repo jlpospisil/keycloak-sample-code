@@ -1,38 +1,30 @@
 <template>
   <div>
-    <h1>User has write access!!!</h1>
-    <h1>User:</h1>
+    <h1>Response from Demo API example write endpoint:</h1>
     <p>
-      {{ userProfile }}
-    </p>
-
-    <h1>Auth Header Value:</h1>
-    <p>
-      {{ authHeaderValue }}
+      {{ demoContent }}
     </p>
   </div>
 </template>
 
 <script lang="ts">
-import Oidc from 'oidc-client';
 import { ServiceProviderKeys } from '@/services';
 import { defineComponent, inject } from 'vue';
-import AuthService from '@/services/AuthService';
+import DemoApiService from '@/services/DemoApiService';
 
 export default defineComponent({
   name: 'WriteAccess',
 
   setup: () => ({
-    authService: inject<AuthService>(ServiceProviderKeys.AUTH_SERVICE),
+    demoApiService: inject<DemoApiService>(ServiceProviderKeys.DEMO_API_SERVICE),
   }),
 
-  computed: {
-    authHeaderValue(): string | undefined {
-      return this.authService?.authHeaderValue;
-    },
-    userProfile(): Oidc.Profile | undefined {
-      return this.authService?.userProfile;
-    },
+  data: () => ({
+    demoContent: null,
+  }),
+
+  async mounted() {
+    this.demoContent = await this.demoApiService?.getDemoWriteContent();
   },
 });
 </script>
