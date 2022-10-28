@@ -3,10 +3,10 @@ resource "keycloak_realm" "realm" {
   enabled              = var.enabled
   display_name         = var.display_name
   display_name_html    = var.display_name_html
-  account_theme        = var.theme
-  admin_theme          = var.theme
-  email_theme          = var.theme
-  login_theme          = var.theme
+  account_theme        = coalesce(var.account_theme, var.theme)
+  admin_theme          = coalesce(var.admin_theme, var.theme)
+  email_theme          = coalesce(var.email_theme, var.theme)
+  login_theme          = coalesce(var.login_theme, var.theme)
   ssl_required         = var.ssl_required
   password_policy      = var.password_policy
 }

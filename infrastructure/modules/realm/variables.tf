@@ -18,8 +18,32 @@ variable "enabled" {
 
 variable "theme" {
   type        = string
-  default     = null
+  default     = "keycloak"
   description = "The theme to be used for the realm"
+}
+
+variable "login_theme" {
+  type        = string
+  default     = null
+  description = "The theme used for the login, forgot password, and registration pages"
+}
+
+variable "account_theme" {
+  type        = string
+  default     = null
+  description = "The theme used for account management pages"
+}
+
+variable "admin_theme" {
+  type        = string
+  default     = null
+  description = "The theme used for the admin console"
+}
+
+variable "email_theme" {
+  type        = string
+  default     = null
+  description = "The theme used for emails that are sent by Keycloak"
 }
 
 variable "name" {
