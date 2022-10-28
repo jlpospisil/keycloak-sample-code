@@ -14,3 +14,8 @@ logging.level:
 api:
   cors:
     origin-patterns: http://localhost:*
+    # We should be able to provide a comma separated list soon... not sure how to tell what releases this commit
+    #  was published to though.  https://github.com/spring-projects/spring-framework/commit/badba7c3e976666536522102c9a90f8098be6e0f
+    #  When that's available, this should work which would obviously be useful in non local envs!!!
+    # origin-patterns: "https://host1.com,https://host2.com,https://host3.com,https://host4.com,\
+    #    https://host5.com,https://host6.com,https://host7.com,https://host8.com,https://host9.com"
