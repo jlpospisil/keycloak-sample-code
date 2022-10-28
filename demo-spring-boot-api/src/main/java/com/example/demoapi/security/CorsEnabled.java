@@ -14,5 +14,5 @@ import java.lang.annotation.Target;
 @Inherited
 @Documented
 @CrossOrigin(originPatterns = "${api.cors.origin-patterns}", allowedHeaders = "*", allowCredentials = "true")
-public @interface AllowCrossOrigin {
+public @interface CorsEnabled {
 }
