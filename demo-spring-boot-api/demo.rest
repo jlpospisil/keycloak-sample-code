@@ -1,0 +1,16 @@
+### Demo Read
+
+GET {{baseUrl}}/demo-read
+Authorization: Bearer {{authToken}}
+
+### Demo Write
+
+GET {{baseUrl}}/demo-write
+Authorization: Bearer {{authToken}}
+
+
+### Demo User Info
+
+GET {{baseUrl}}/user-info
+Authorization: Bearer {{authToken}}
+

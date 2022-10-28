@@ -39,6 +39,12 @@ variable "realm_id" {
   description = "The realm this client is attached to"
 }
 
+variable "role_ids" {
+  type        = list(string)
+  default     = []
+  description = "A list of Ids for the roles to add to the user"
+}
+
 variable "username" {
   type        = string
   description = "The unique username of this user"

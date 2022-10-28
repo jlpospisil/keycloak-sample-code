@@ -20,3 +20,9 @@ resource "keycloak_user_groups" "user_groups" {
   user_id   = keycloak_user.user.id
   group_ids = var.group_ids
 }
+
+resource "keycloak_user_roles" "user_roles" {
+  realm_id  = var.realm_id
+  user_id   = keycloak_user.user.id
+  role_ids  = var.role_ids
+}

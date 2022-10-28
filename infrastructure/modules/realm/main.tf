@@ -11,20 +11,20 @@ resource "keycloak_realm" "realm" {
   password_policy      = var.password_policy
 }
 
-resource "keycloak_openid_client_scope" "openid_client_group_scope" {
-  realm_id               = keycloak_realm.realm.id
-  name                   = "groups"
-  description            = "When requested, this scope will map a user's group memberships to a claim"
-  include_in_token_scope = true
-}
-
-resource "keycloak_openid_group_membership_protocol_mapper" "group_membership_mapper" {
-  realm_id            = keycloak_realm.realm.id
-  client_scope_id     = keycloak_openid_client_scope.openid_client_group_scope.id
-  name                = "group-membership-mapper"
-  add_to_id_token     = true
-  add_to_access_token = true
-  add_to_userinfo     = true
-  full_path           = false
-  claim_name          = "groups"
-}
+#resource "keycloak_openid_client_scope" "openid_client_group_scope" {
+#  realm_id               = keycloak_realm.realm.id
+#  name                   = "groups"
+#  description            = "When requested, this scope will map a user's group memberships to a claim"
+#  include_in_token_scope = true
+#}
+#
+#resource "keycloak_openid_group_membership_protocol_mapper" "group_membership_mapper" {
+#  realm_id            = keycloak_realm.realm.id
+#  client_scope_id     = keycloak_openid_client_scope.openid_client_group_scope.id
+#  name                = "group-membership-mapper"
+#  add_to_id_token     = true
+#  add_to_access_token = true
+#  add_to_userinfo     = true
+#  full_path           = false
+#  claim_name          = "groups"
+#}

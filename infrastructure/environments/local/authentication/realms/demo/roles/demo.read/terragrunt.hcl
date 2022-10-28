@@ -12,10 +12,11 @@ dependency "demo_realm" {
 }
 
 inputs = {
-  realm_id = dependency.demo_realm.outputs.realm.id
-  name     = "demo.write"
+  realm_id    = dependency.demo_realm.outputs.realm.id
+  name        = "demo.read"
+  description = "access to view demo resources"
 }
 
 terraform {
-  source = "../../../../../../..//modules/group"
+  source = "../../../../../../..//modules/role"
 }

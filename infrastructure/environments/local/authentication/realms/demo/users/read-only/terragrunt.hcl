@@ -11,11 +11,11 @@ dependency "demo_realm" {
   }
 }
 
-dependency "demo_read_group" {
-  config_path = "../../groups/demo.read"
+dependency "demo_read_role" {
+  config_path = "../../roles/demo.read"
   mock_outputs = {
-    group = {
-      id = "mock-group-id"
+    role = {
+      id = "mock-role-id"
     }
   }
 }
@@ -24,8 +24,8 @@ inputs = {
   realm_id         = dependency.demo_realm.outputs.realm.id
   username         = "readonly"
   initial_password = "P@55w0rd"
-  group_ids = [
-    dependency.demo_read_group.outputs.group.id,
+  role_ids = [
+    dependency.demo_read_role.outputs.role.id,
   ]
 }
 

@@ -11,21 +11,27 @@ services:
       POSTGRES_DB: $DB_DATABASE
       POSTGRES_USER: $DB_USER
       POSTGRES_PASSWORD: $DB_PASSWORD
-#    ports:
-#      - "5432:5432"
+    ports:
+      - "5432:5432"
     volumes:
       - ./.data/postgres:/var/lib/postgresql/data
 
   keycloak:
     container_name: keycloak
-    image: quay.io/keycloak/keycloak:19.0.2
-    command: start-dev
+    image: quay.io/keycloak/keycloak:19.0.3
+    command: |
+      start-dev
+        --db $DB_VENDOR
+        --db-username $DB_USER
+        --db-password $DB_PASSWORD
+        --db-url-host $DB_HOST
+        --db-url-database $DB_DATABASE
 #    command: 'start
 #      --optimized
 #      --hostname localhost
 #      --https-certificate-file=/etc/x509/https/keycloak.crt
 #      --https-certificate-key-file=/etc/x509/https/keycloak.key'
-    restart: unless-stopped
+#    restart: unless-stopped
     depends_on:
       - db
     env_file:
