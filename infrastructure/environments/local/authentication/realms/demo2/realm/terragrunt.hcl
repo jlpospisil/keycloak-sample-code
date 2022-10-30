@@ -7,7 +7,7 @@ inputs = {
   display_name = "Demo 2"
   display_name_html = "<b>Demo 2</b>"
   ssl_required = "none"
-  login_theme = "sunrise"
+  login_theme = "demo"
 }
 
 terraform {
