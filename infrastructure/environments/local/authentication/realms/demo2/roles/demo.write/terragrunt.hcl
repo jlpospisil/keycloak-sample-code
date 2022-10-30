@@ -2,7 +2,7 @@ include {
   path = find_in_parent_folders()
 }
 
-dependency "demo_realm" {
+dependency "realm" {
   config_path = "../../realm"
   mock_outputs = {
     realm = {
@@ -12,7 +12,7 @@ dependency "demo_realm" {
 }
 
 inputs = {
-  realm_id    = dependency.demo_realm.outputs.realm.id
+  realm_id    = dependency.realm.outputs.realm.id
   name        = "demo.write"
   description = "access to create or update demo resources"
 }

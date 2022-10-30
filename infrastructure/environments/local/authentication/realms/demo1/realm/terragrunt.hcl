@@ -3,11 +3,11 @@ include {
 }
 
 inputs = {
-  name = "demo-realm"
-  display_name = "Demo Realm"
-  display_name_html = "<b>Demo Realm</b>"
+  name = "demo1"
+  display_name = "Demo 1"
+  display_name_html = "<b>Demo 1</b>"
   ssl_required = "none"
-  login_theme = "sunrise"
+#  login_theme = "sunrise"
 }
 
 terraform {

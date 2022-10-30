@@ -1,8 +1,8 @@
 package com.example.demoapi;
 
 import com.example.demoapi.security.CorsEnabled;
-import com.example.demoapi.security.authorities.HasAuthorityResource1Read;
-import com.example.demoapi.security.authorities.HasAuthorityResource1Write;
+import com.example.demoapi.security.authorities.HasAuthorityDemoRead;
+import com.example.demoapi.security.authorities.HasAuthorityDemoWrite;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,13 +15,13 @@ import java.util.Map;
 public class DemoController {
 
     @GetMapping("/demo-read")
-    @HasAuthorityResource1Read
+    @HasAuthorityDemoRead
     public Map<String, Object> demoRead() {
         return Map.of("read-access", true);
     }
 
     @GetMapping("/demo-write")
-    @HasAuthorityResource1Write
+    @HasAuthorityDemoWrite
     public Map<String, Object> demoWrite() {
         return Map.of("write-access", true);
     }

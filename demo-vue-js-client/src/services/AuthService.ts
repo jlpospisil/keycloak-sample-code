@@ -13,12 +13,13 @@ class AuthService {
 
   constructor() {
     const domain = process.env.VUE_APP_AUTH_DOMAIN;
+    const realm = process.env.VUE_APP_AUTH_REALM;
     const { origin } = window.location;
 
     const settings: Oidc.UserManagerSettings = {
       userStore: new Oidc.WebStorageStateStore({ store: window.sessionStorage }),
       authority: domain,
-      metadataUrl: `${domain}/realms/demo-realm/.well-known/openid-configuration`,
+      metadataUrl: `${domain}/realms/${realm}/.well-known/openid-configuration`,
       redirect_uri: `${origin}/login/callback`,
       response_type: 'id_token token',
       scope: 'openid profile roles',

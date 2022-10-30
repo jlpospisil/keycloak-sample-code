@@ -15,5 +15,5 @@ import java.lang.annotation.Target;
 @Inherited
 @Documented
 @PreAuthorize("hasAuthority('" + Roles.PREFIX + Roles.DEMO_READ + "')")
-public @interface HasAuthorityResource1Read {
+public @interface HasAuthorityDemoRead {
 }

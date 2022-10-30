@@ -15,5 +15,5 @@ import java.lang.annotation.Target;
 @Inherited
 @Documented
 @PreAuthorize("hasAuthority('" + Roles.PREFIX + Roles.DEMO_WRITE + "')")
-public @interface HasAuthorityResource1Write {
+public @interface HasAuthorityDemoWrite {
 }

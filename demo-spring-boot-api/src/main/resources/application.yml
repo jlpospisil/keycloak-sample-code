@@ -1,12 +1,12 @@
 server:
   port: 8082
 
-spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: http://localhost:8080/realms/demo-realm
+#spring:
+#  security:
+#    oauth2:
+#      resourceserver:
+#        jwt:
+#          issuer-uri: http://localhost:8080/realms/demo-realm
 
 logging.level:
   org.springframework.security.oauth2: DEBUG
@@ -19,3 +19,7 @@ api:
     #  When that's available, this should work which would obviously be useful in non local envs!!!
     # origin-patterns: "https://host1.com,https://host2.com,https://host3.com,https://host4.com,\
     #    https://host5.com,https://host6.com,https://host7.com,https://host8.com,https://host9.com"
+  jwt:
+    issuer-uris:
+      - http://localhost:8080/realms/demo1
+      - http://localhost:8080/realms/demo2
