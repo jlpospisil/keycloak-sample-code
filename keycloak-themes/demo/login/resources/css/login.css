@@ -3,9 +3,15 @@ body {
 }
 
 .logo {
-    width: 213px;
-    height: 36px;
+    /*width: 213px;*/
+    /*height: 36px;*/
     margin: 30px auto;
+    text-align: center;
+}
+
+.logo img {
+    max-height: 200px;
+    width: auto;
 }
 
 .login-block {

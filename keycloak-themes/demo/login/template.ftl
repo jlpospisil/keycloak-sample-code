@@ -46,10 +46,6 @@
                 background-size: cover;
             }
 
-            .logo {
-                background: url('${client.getAttribute("theme.logo")!''}') no-repeat;
-            }
-
             .login-block {
                 border-top: 5px solid var(--primary-color);
             }
@@ -67,7 +63,9 @@
     </head>
 
     <body class="${properties.kcBodyClass!}">
-        <div class="logo"></div>
+        <div class="logo">
+            <img src="${client.getAttribute("theme.logo")!''}" />
+        </div>
 
         <div class="login-block">
             <h1>${title}</h1>

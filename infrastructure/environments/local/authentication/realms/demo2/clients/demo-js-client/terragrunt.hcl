@@ -25,6 +25,7 @@ inputs = {
 #  optional_scopes = [
 #    dependency.realm.outputs.openid_group_scope_name,
 #  ]
+  login_theme = "demo"
   extra_config = {
     "theme.primary-color" = "#7C4DFF",
     "theme.logo" = "http://i.imgur.com/fd8Lcso.png",

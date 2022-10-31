@@ -5,7 +5,7 @@ resource "keycloak_openid_client" "client" {
   enabled               = var.enabled
   access_type           = var.access_type
   valid_redirect_uris   = var.valid_redirect_uris
-  login_theme           = var.theme
+  login_theme           = var.login_theme
   standard_flow_enabled = var.standard_flow_enabled
   implicit_flow_enabled = var.implicit_flow_enabled
   web_origins           = var.web_origins

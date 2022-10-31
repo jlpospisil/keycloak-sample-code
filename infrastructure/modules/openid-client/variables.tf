@@ -59,7 +59,7 @@ variable "standard_flow_enabled" {
   description = "When true, the OAuth2 Authorization Code Grant will be enabled for this client"
 }
 
-variable "theme" {
+variable "login_theme" {
   type        = string
   default     = null
   description = "The client login theme. This will override the default theme for the realm"

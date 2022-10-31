@@ -25,6 +25,12 @@ inputs = {
 #  optional_scopes = [
 #    dependency.realm.outputs.openid_group_scope_name,
 #  ]
+  login_theme = "demo"
+  extra_config = {
+    "theme.primary-color" = "#607D8B",
+    "theme.logo" = "https://imgur.com/XpwZOZH.png",
+    "theme.login.background-image-url" = "https://imgur.com/ugTuype.jpeg"
+  }
 }
 
 terraform {
