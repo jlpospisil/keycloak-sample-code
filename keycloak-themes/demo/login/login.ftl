@@ -23,7 +23,9 @@
                 autocomplete="password"
             />
 
-            <button type="submit">Submit</button>
+            <button type="submit" class="primary">
+                Submit
+            </button>
         </form>
     </#if>
 

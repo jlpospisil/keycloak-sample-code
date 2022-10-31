@@ -35,6 +35,35 @@
                 <script src="${script}" type="text/javascript"></script>
             </#list>
         </#if>
+
+        <style>
+            :root {
+                --primary-color: ${client.getAttribute("theme.primary-color")!'#ff656c'};
+            }
+
+            body {
+                background: url('${client.getAttribute("theme.login.background-image-url")!''}') no-repeat fixed center center;
+                background-size: cover;
+            }
+
+            .logo {
+                background: url('${client.getAttribute("theme.logo")!''}') no-repeat;
+            }
+
+            .login-block {
+                border-top: 5px solid var(--primary-color);
+            }
+
+            button.primary {
+                background-color: var(--primary-color);
+                color: #ffffff;
+                border: none;
+            }
+
+            button.primary:hover {
+                background-image: linear-gradient(rgb(0 0 0/15%), rgb(0 0 0/15%));
+            }
+        </style>
     </head>
 
     <body class="${properties.kcBodyClass!}">

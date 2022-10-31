@@ -25,6 +25,11 @@ inputs = {
 #  optional_scopes = [
 #    dependency.realm.outputs.openid_group_scope_name,
 #  ]
+  extra_config = {
+    "theme.primary-color" = "#7C4DFF",
+    "theme.logo" = "http://i.imgur.com/fd8Lcso.png",
+    "theme.login.background-image-url" = "http://i.imgur.com/Eor57Ae.jpg"
+  }
 }
 
 terraform {

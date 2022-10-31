@@ -9,6 +9,7 @@ resource "keycloak_realm" "realm" {
   login_theme          = coalesce(var.login_theme, var.theme)
   ssl_required         = var.ssl_required
   password_policy      = var.password_policy
+  attributes           = var.attributes
 }
 
 #resource "keycloak_openid_client_scope" "openid_client_group_scope" {

@@ -1,3 +1,9 @@
+variable "attributes" {
+  type        = map(string)
+  default     = null
+  description = "A map of custom attributes to add to the realm"
+}
+
 variable "display_name" {
   type        = string
   default     = null
